@@ -1,10 +1,10 @@
 ---
 - name: Find KB Docs
-  hosts: "{{ my_ip }}"
+  hosts: all
   #become: true
   tasks:
     - name: Check File Path for KB Name
         find:
           paths: /data/ftp/files/
-          patterns: " {{ my_regex_expression }}"
+          patterns: '^\S{kb5011644}$'
           use_regex: yes
