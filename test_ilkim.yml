@@ -5,6 +5,6 @@
   tasks:
     - name: Check File Path for KB Name
         find:
-        paths: /data/ftp/files/
-        patterns: " {{ my_regex_expression }}"
-        use_regex: yes
+          paths: /data/ftp/files/
+          patterns: " {{ my_regex_expression }}"
+          use_regex: yes
