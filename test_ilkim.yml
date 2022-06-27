@@ -4,7 +4,8 @@
   #become: true
   tasks:
     - name: Check File Path for KB Name
-        find:
+      - find:
           paths: /data/ftp/files/
-          patterns: '^\S{kb5011644}$'
+          file_type: directory
           use_regex: yes
+          patterns: '^\S{kb5011644}$'
