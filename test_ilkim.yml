@@ -12,4 +12,4 @@
       register: list_of_files
     - name: print files
       debug:
-        msg: "{{ list_of_files.files }}"
+        msg: "{{ list_of_files.files.path }}"
