@@ -3,10 +3,13 @@
   hosts: all
   #become: true
   tasks:
-    - name: Check File Path for KB Name
+    - name: find files
       find:
         paths: /data/ftp/files/
-        file_type: directory
+        patterns: "(.*kb5011644.*)$"
         use_regex: yes
-        patterns: '*kb5011644*'
-       register: oea
+        hidden: yes
+      register: list_of_files
+    - name: print files
+      debug:
+        msg: "{{ list_of_files.files }}"
