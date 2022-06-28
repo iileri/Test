@@ -1,12 +1,12 @@
 ---
 - name: Find KB Docs
-  hosts: all
+  hosts: " {{ server_ip }}"
   #become: true
   tasks:
     - name: find files
       find:
         paths: /data/ftp/files/
-        patterns: "(.*kb5011644.*)$"
+        patterns: "(.*{{ kb_number }}.*)$"
         use_regex: yes
         hidden: yes
       register: list_of_files
