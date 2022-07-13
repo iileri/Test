@@ -1,5 +1,5 @@
 ---
-- name: Find KB Docs
+- name: Check Pod Status of SMAX
   hosts: " {{ server_ip }}"
   #become: true
   tasks:
