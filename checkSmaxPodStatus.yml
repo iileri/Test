@@ -1,1 +1,11 @@
-
+---
+- name: Find KB Docs
+  hosts: " {{ server_ip }}"
+  #become: true
+  tasks:
+    - name: check kube-status
+      command: cat /etc/motd
+      register: check_kube_status
+    - name: print files
+      debug:
+        msg: "{{ check_kube_status }}"
