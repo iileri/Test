@@ -4,7 +4,7 @@
   #become: true
   tasks:
     - name: check kube-status
-      command: cat /etc/motd
+      command: /opt/kubernetes/bin/kube-status.sh
       register: check_kube_status
     - name: print files
       debug:
